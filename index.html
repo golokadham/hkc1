@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hare Krishna Community Bloomington-Normal IL</title>
+  <meta name="description" content="Hare Krishna Community of Bloomington-Normal, Illinois — an ISKCON-inspired community. Weekly Bhakti Vriksha, online Bhagavatam reading, kids classes, kirtan, festivals and prasadam. Everyone is welcome." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: 'hsl(43 37% 96%)',
+            foreground: 'hsl(153 17% 13%)',
+            card: { DEFAULT: 'hsl(43 45% 99%)', foreground: 'hsl(153 17% 13%)' },
+            primary: { DEFAULT: 'hsl(28 80% 52%)', foreground: 'hsl(43 60% 98%)' },
+            secondary: { DEFAULT: 'hsl(40 28% 92%)', foreground: 'hsl(153 17% 15%)' },
+            muted: { DEFAULT: 'hsl(40 22% 93%)', foreground: 'hsl(153 12% 38%)' },
+            accent: { DEFAULT: 'hsl(39 48% 56%)', foreground: 'hsl(43 60% 98%)' },
+            border: 'hsl(39 26% 84%)',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --page-bg: #f5f0e6;
+      --paper: rgba(255, 255, 255, 0.78);
+      --panel: rgba(255, 250, 243, 0.96);
+      --ink: #1d2b2a;
+      --muted: #5a615d;
+      --primary: #c96d2c;
+      --accent: #bb8d3d;
+      --border: rgba(110, 92, 64, 0.18);
+      --shadow-soft: 0 24px 60px -32px rgba(27, 38, 33, 0.38);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(201, 109, 44, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(187, 141, 61, 0.08), transparent 24%),
+        var(--page-bg);
+    }
+
+    .premium-shell {
+      position: relative;
+    }
+
+    .premium-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .premium-nav {
+      box-shadow: 0 12px 30px -24px rgba(29, 43, 42, 0.2);
+    }
+
+    .premium-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(201,109,44,0.11), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .premium-button-primary,
+    .premium-button-secondary {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .premium-button-primary {
+      background: linear-gradient(135deg, #cf7a34 0%, #b85d20 100%);
+      box-shadow: 0 18px 30px -18px rgba(184, 93, 32, 0.8);
+    }
+
+    .premium-button-primary:hover,
+    .premium-button-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .premium-button-secondary {
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(187,141,61,0.5);
+      box-shadow: 0 10px 24px -18px rgba(27,38,33,0.45);
+    }
+
+    .premium-title {
+      text-shadow: 0 8px 24px rgba(29,43,42,0.08);
+    }
+
+    .portrait-frame {
+      box-shadow: 0 32px 70px -34px rgba(27,38,33,0.62);
+    }
+
+    .soft-divider {
+      background: linear-gradient(90deg, transparent, rgba(187,141,61,0.8), transparent);
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(187,141,61,0.4);
+      background: rgba(255,255,255,0.42);
+      color: #a86e2d;
+      box-shadow: 0 10px 24px -18px rgba(27,38,33,0.2);
+    }
+
+    .feature-image {
+      box-shadow: 0 20px 45px -28px rgba(27,38,33,0.45);
+    }
+
+    .section-kicker {
+      letter-spacing: 0.28em;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .premium-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.78));
+      border: 1px solid rgba(110,92,64,0.12);
+      box-shadow: 0 24px 60px -34px rgba(27,38,33,0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .premium-cta {
+      box-shadow: 0 18px 36px -22px rgba(184,93,32,0.7);
+    }
+
+    @media (max-width: 640px) {
+      .premium-card {
+        box-shadow: 0 16px 40px -28px rgba(27,38,33,0.32);
+      }
+    }
+  </style>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="premium-shell bg-[hsl(43,37%,96%)] text-[hsl(153,17%,13%)] font-body antialiased selection:bg-primary/20">
+
+  <!-- Navigation -->
+  <header id="navbar" class="premium-nav fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b border-transparent bg-transparent">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="#top" class="font-heading text-base font-semibold leading-tight tracking-tight sm:text-lg">Hare Krishna Community Bloomington-Normal IL</a>
+      <nav class="hidden items-center gap-9 md:flex">
+        <a href="#activities" class="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary">Activities</a>
+        <a href="#festivals" class="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary">Festivals</a>
+        <a href="#saints" class="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary">Visiting Saints</a>
+        <a href="#contact" class="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary">Contact</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Menu" class="text-foreground md:hidden">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden border-t border-border bg-background/95 backdrop-blur-xl md:hidden">
+      <a href="#activities" class="mobile-link block border-b border-border/60 px-6 py-4 text-sm text-foreground/85">Activities</a>
+      <a href="#festivals" class="mobile-link block border-b border-border/60 px-6 py-4 text-sm text-foreground/85">Festivals</a>
+      <a href="#saints" class="mobile-link block border-b border-border/60 px-6 py-4 text-sm text-foreground/85">Visiting Saints</a>
+      <a href="#contact" class="mobile-link block border-b border-border/60 px-6 py-4 text-sm text-foreground/85">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="top" class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-background/70 via-background/88 to-background z-10"></div>
+        <img src="hero-kirtan.jpg" alt="Kirtan gathering" class="h-full w-full object-cover opacity-[0.22]" />
+      </div>
+      <div class="relative z-20 mx-auto max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36">
+        <p class="hero-badge text-center text-[0.7rem] uppercase tracking-[0.3em] text-primary">Bloomington Normal, Illinois</p>
+        <div class="mt-10 grid grid-cols-2 items-center gap-x-6 gap-y-10 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-12">
+          
+          <!-- Srila Prabhupada -->
+          <figure class="flex flex-col items-center gap-4 order-1 lg:order-none">
+            <div class="portrait-frame relative h-32 w-32 overflow-hidden rounded-full border border-accent/40 sm:h-44 sm:w-44 lg:h-60 lg:w-60">
+              <div class="absolute inset-2 rounded-full border border-white/50"></div>
+              <div class="h-full w-full overflow-hidden rounded-full bg-secondary ring-1 ring-accent/60">
+                <img src="prabhupada.jpg" alt="Srila Prabhupada" class="h-full w-full object-cover" />
+              </div>
+            </div>
+            <figcaption class="text-center">
+              <p class="font-heading text-sm text-foreground sm:text-base lg:text-lg">Srila Prabhupada</p>
+              <p class="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">Founder-Acharya of ISKCON</p>
+            </figcaption>
+          </figure>
+
+          <!-- Main Title & CTA -->
+          <div class="order-3 col-span-2 text-center lg:order-none lg:col-span-1">
+            <h1 class="premium-title font-heading text-[2.1rem] leading-[1.08] text-foreground sm:text-5xl lg:text-[3.6rem]">Hare Krishna! Welcome to our bhakti family</h1>
+            <p class="mx-auto mt-5 max-w-xl font-heading text-base italic leading-relaxed text-muted-foreground sm:text-xl">A spiritual home for chanting, hearing, serving, and growing in devotion to Lord Krishna</p>
+            <p class="mx-auto mt-6 max-w-md text-xs leading-relaxed tracking-wide text-accent sm:text-sm">Inspired by the teachings of Srila Prabhupada and the global ISKCON movement, where every heart is invited to awaken to Krishna consciousness.</p>
+            <div class="mt-9 flex flex-wrap justify-center gap-3">
+              <a href="#activities" class="premium-button-primary rounded-full px-7 py-3 text-sm font-medium text-primary-foreground">Join our devotional programs</a>
+              <a href="#contact" class="premium-button-secondary rounded-full px-7 py-3 text-sm font-medium text-foreground">Visit the temple</a>
+            </div>
+          </div>
+
+          <!-- Sri Chaitanya Mahaprabhu -->
+          <figure class="flex flex-col items-center gap-4 order-2 lg:order-none">
+            <div class="portrait-frame relative h-32 w-32 overflow-hidden rounded-full border border-accent/40 sm:h-44 sm:w-44 lg:h-60 lg:w-60">
+              <div class="absolute inset-2 rounded-full border border-white/50"></div>
+              <div class="h-full w-full overflow-hidden rounded-full bg-secondary ring-1 ring-accent/60">
+                <img src="chaitanya.jpg" alt="Sri Chaitanya Mahaprabhu" class="h-full w-full object-cover" />
+              </div>
+            </div>
+            <figcaption class="text-center">
+              <p class="font-heading text-sm text-foreground sm:text-base lg:text-lg">Sri Chaitanya Mahaprabhu</p>
+              <p class="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">The Golden Avatar</p>
+            </figcaption>
+          </figure>
+
+        </div>
+        <div class="soft-divider mx-auto mt-16 h-px w-full max-w-4xl lg:mt-20"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
+      <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-accent/50">
+        <i data-lucide="flower-2" class="h-4 w-4 text-accent"></i>
+      </span>
+      <div class="premium-panel mx-auto max-w-4xl rounded-[28px] px-6 py-8 sm:px-10 sm:py-10">
+        <h2 class="mt-2 font-heading text-3xl leading-tight text-foreground sm:text-4xl">Welcome to our Krishna conscious family</h2>
+        <div class="mx-auto mt-7 h-px w-16 bg-accent/60"></div>
+        <p class="mt-7 whitespace-pre-line text-base leading-relaxed text-muted-foreground sm:text-lg">
+          We are a growing family of devotees, friends, and well-wishers in Bloomington-Normal, Illinois, sharing the eternal wisdom of the Bhagavad-gita and Srimad-Bhagavatam, the bliss of kirtan, and the sacred practice of chanting the holy names of Krishna. Inspired by the teachings of Srila Prabhupada and the worldwide ISKCON movement, we gather each week for hari-katha, spiritual discussion, festivals, seva, and prasadam. Whether you are newly curious, sincerely seeking, or simply looking for a peaceful place to reconnect, you are always welcome here.
+        </p>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="border-y border-border bg-secondary/50">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <div class="max-w-2xl">
+          <p class="section-kicker text-primary">Ongoing activities</p>
+          <h2 class="mt-3 font-heading text-3xl leading-tight text-foreground sm:text-4xl">Our weekly rhythm of devotion</h2>
+          <p class="mt-4 text-base leading-relaxed text-muted-foreground">Regular gatherings, open to everyone. No prior experience, no background needed — simply come as you are.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Activity 1 -->
+          <article class="premium-card group flex flex-col rounded-lg p-7 transition-all duration-500 hover:-translate-y-1 hover:border-accent/70">
+            <div class="feature-image mb-5 overflow-hidden rounded-md border border-border bg-muted">
+              <img src="hero-kirtan.jpg" alt="Bhagvatam weekly reading classes" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+            </div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <i data-lucide="users" class="h-5 w-5"></i>
+            </span>
+            <p class="mt-6 text-[0.7rem] uppercase tracking-[0.22em] text-accent">Bhakti Vriksha</p>
+            <div class="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-primary">
+              <i data-lucide="map-pin" class="h-3 w-3"></i>
+              In person class
+            </div>
+            <h3 class="mt-2 font-heading text-xl text-foreground">Weekly Home Satsang</h3>
+            <p class="mt-3 flex items-center gap-2 text-sm font-medium text-primary">
+              <i data-lucide="clock" class="h-4 w-4 shrink-0"></i> Every Saturday • 6:00 PM to 8:00 PM (Central Time)
+            </p>
+            <p class="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">An intimate gathering featuring kirtan, scriptural discussion on the Bhagavad-gita, and sanctified vegetarian prasadam.</p>
+            <div class="mt-4">
+              <p class="text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">Location</p>
+              <div class="mt-2 flex flex-col gap-1 text-sm font-semibold text-muted-foreground">
+                <p class="flex items-start gap-2">
+                  <i data-lucide="map-pin" class="mt-0.5 h-3.5 w-3.5 shrink-0"></i>
+                  <span>Bloomington, IL</span>
+                </p>
+                <p class="flex items-start gap-2 pl-5">
+                  <span>Champaign, IL</span>
+                </p>
+                <p class="flex items-start gap-2 pl-5">
+                  <span>Peoria, IL</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Activity 2 -->
+          <article class="premium-card group flex flex-col rounded-lg p-7 transition-all duration-500 hover:-translate-y-1 hover:border-accent/70">
+             <div class="feature-image mb-5 overflow-hidden rounded-md border border-border bg-muted">
+              <img src="SB.jpeg" alt="Bhakti Vriksha weekly kirtan gathering" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+            </div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <i data-lucide="book-open" class="h-5 w-5"></i>
+            </span>
+            <p class="mt-6 text-[0.7rem] uppercase tracking-[0.22em] text-accent">Study</p>
+            <h3 class="mt-2 font-heading text-xl text-foreground">Online Bhagavatam Class</h3>
+            <p class="mt-3 flex items-center gap-2 text-sm font-medium text-primary">
+              <i data-lucide="clock" class="h-4 w-4 shrink-0"></i> Thursday • 8:30 PM to 9:15 PM (Central Time)
+            </p>
+            <p class="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">Deep dive verse-by-verse study of the Srimad-Bhagavatam via Zoom, exploring the philosophical foundations of bhakti.</p>
+            <div class="mt-4">
+              <p class="text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">Location</p>
+              <p class="mt-1 flex items-start gap-2 text-sm font-semibold text-muted-foreground">
+                <i data-lucide="video" class="mt-0.5 h-3.5 w-3.5 shrink-0"></i>
+                <span><a href="#contact" class="transition-colors hover:text-primary">Contact for more information</a></span>
+              </p>
+            </div>
+            <!--<a href="https://zoom.us" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline">
+              Join here <i data-lucide="arrow-up-right" class="h-4 w-4"></i>-->
+            </a>
+          </article>
+
+          <!-- Activity 3 -->
+          <article class="premium-card group flex flex-col rounded-lg p-7 transition-all duration-500 hover:-translate-y-1 hover:border-accent/70">
+            <div class="feature-image mb-5 overflow-hidden rounded-md border border-border bg-muted">
+              <img src="bhaktikids.avif" alt="Bhakti kids weekly Kids weekly classes" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+            </div>
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <i data-lucide="users" class="h-5 w-5"></i>
+            </span>
+            <p class="mt-6 text-[0.7rem] uppercase tracking-[0.22em] text-accent">Bhakti Kids</p>
+            <div class="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-primary">
+              <i data-lucide="users" class="h-3 w-3"></i>
+              In person class
+            </div>
+            <h3 class="mt-2 font-heading text-xl text-foreground">Bhakti Kids Classes</h3>
+            <p class="mt-3 flex items-center gap-2 text-sm font-medium text-primary">
+              <i data-lucide="clock" class="h-4 w-4 shrink-0"></i> Every Sunday · 10:00 AM – 12:00 PM
+            </p>
+            <p class="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+              For children ages 3 to 14: stories, songs, slokas, crafts and games that introduce Krishna in a joyful, gentle way. Parents are welcome to stay.
+            </p>
+            <div class="mt-4">
+              <p class="text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">Location</p>
+              <p class="mt-1 flex items-start gap-2 text-sm font-semibold text-muted-foreground">
+                <i data-lucide="map-pin" class="mt-0.5 h-3.5 w-3.5 shrink-0"></i>
+                <span> Bloomington, IL</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section id="festivals" class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.28em] text-primary">The celestial calendar</p>
+        <h2 class="mt-3 font-heading text-3xl leading-tight text-foreground sm:text-4xl">Upcoming festivals</h2>
+        <p class="mt-4 text-base leading-relaxed text-muted-foreground">Our biggest gatherings of the year — kirtan, abhisheka, classes and a grand feast. Everyone is welcome, and every pair of hands helps.</p>
+      </div>
+
+      <div class="mt-14 grid gap-6 lg:grid-cols-3">
+        <!-- Featured Festival Card -->
+        <article class="group relative overflow-hidden rounded-lg border border-border lg:col-span-2">
+          <img src="dussehra.jpg" alt="Dussehra celebration" class="w-full h-[24rem] sm:h-[26rem] object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/80 to-foreground/25"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-7 sm:p-10">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-3.5 py-1.5 text-xs font-medium text-primary-foreground">
+              <i data-lucide="calendar-days" class="h-3.5 w-3.5"></i> October 20, 2026
+            </span>
+            <h3 class="font-heading text-2xl sm:text-3xl leading-tight text-background">Dussehra Festival</h3>
+            <p class="mt-2 text-sm text-background/75">5:30 PM onwards</p>
+            <p class="mt-3 max-w-xl text-sm leading-relaxed text-background/80">Celebrate the victory of good over evil with a spiritually uplifting evening of kirtan, scriptural reflections, maha-prasad, and a joyful community gathering.</p>
+            <div class="mt-4 space-y-2">
+              <p class="flex items-center gap-2 text-xs text-background/70">
+                <i data-lucide="map-pin" class="h-3.5 w-3.5 shrink-0"></i> Bloomington, IL
+              </p>
+              <p class="flex items-start gap-2 text-xs text-accent">
+                <i data-lucide="sparkles" class="mt-0.5 h-3.5 w-3.5 shrink-0"></i>
+                <span><span class="uppercase tracking-[0.18em]">Seva — </span> Decoration, prasadam, and devotional service</span>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Second Festival Card -->
+        <article class="group relative overflow-hidden rounded-lg border border-border">
+          <img src="govardhan-puja-wishes.jpg" alt="Diwali celebration" class="w-full h-[22rem] object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/80 to-foreground/25"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-7">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-3.5 py-1.5 text-xs font-medium text-primary-foreground">
+              <i data-lucide="calendar-days" class="h-3.5 w-3.5"></i> November 8, 2026
+            </span>
+            <h3 class="font-heading text-xl sm:text-2xl leading-tight text-background">Diwali Festival of Lights</h3>
+            <p class="mt-2 text-sm text-background/75">6:00 PM onwards</p>
+            <p class="mt-3 max-w-xl text-sm leading-relaxed text-background/80">Illuminate the heart with the blessings of Lord Rama and the glow of Krishna-conscious devotion through kirtan, arati, and a festive vegetarian feast.</p>
+            <div class="mt-4 space-y-2">
+              <p class="flex items-center gap-2 text-xs text-background/70">
+                <i data-lucide="map-pin" class="h-3.5 w-3.5 shrink-0"></i> Bloomington, IL
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Visiting Saints Section -->
+    <section id="saints" class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28 border-t border-border">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.28em] text-primary">Sadhu-sanga</p>
+        <h2 class="mt-3 font-heading text-3xl leading-tight text-foreground sm:text-4xl">Visiting saints & teachers</h2>
+        <p class="mt-4 text-base leading-relaxed text-muted-foreground">When a senior devotee or sannyasi visits Bloomington Normal, we announce it here so everyone can take part in the association.</p>
+      </div>
+
+      <!-- Fallback Quote Card (Shown when no saints are scheduled) -->
+      <div class="mx-auto mt-14 max-w-2xl rounded-lg border border-border bg-card px-8 py-14 text-center">
+        <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <i data-lucide="quote" class="h-5 w-5"></i>
+        </span>
+        <p class="mt-6 font-heading text-xl italic leading-relaxed text-foreground sm:text-2xl">“Chant Hare Krishna and be happy.”</p>
+        <p class="mt-4 text-xs uppercase tracking-[0.24em] text-muted-foreground">Srila A. C. Bhaktivedanta Swami Prabhupada</p>
+        <p class="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
+          No visiting saints are scheduled at the moment. Announcements are posted here as soon as a visit is confirmed.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="border-t border-border bg-secondary/50">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <div class="max-w-2xl">
+          <p class="text-xs uppercase tracking-[0.28em] text-primary">Come visit</p>
+          <h2 class="mt-3 font-heading text-3xl leading-tight text-foreground sm:text-4xl">We would love to meet you</h2>
+          <p class="mt-4 text-base leading-relaxed text-muted-foreground">Write to us, call, or simply turn up at one of our gatherings — there is always a place for you, and always prasadam.</p>
+        </div>
+
+        <div class="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <ul class="list-none space-y-0">
+            <li class="flex gap-5 border-b border-border py-6">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <i data-lucide="phone" class="h-4 w-4"></i>
+              </span>
+              <div>
+                <p class="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">Phone</p>
+                <div class="mt-2 text-base leading-relaxed text-foreground"><a href="tel:+13095550199" class="hover:text-primary">+1 (309) 555-0199</a></div>
+              </div>
+            </li>
+            <li class="flex gap-5 border-b border-border py-6">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+              </span>
+              <div>
+                <p class="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">Email</p>
+                <div class="mt-2 text-base leading-relaxed text-foreground"><a href="mailto:info@myhkc.com" class="hover:text-primary">info@myhkc.com</a></div>
+              </div>
+            </li>
+           
+          </ul>
+
+          <!-- <div class="premium-panel flex flex-col justify-center rounded-[28px] p-8 sm:p-10">
+            <p class="text-[0.7rem] uppercase tracking-[0.24em] text-primary">Hare Krishna Community Bloomington-Normal IL</p>
+            <p class="mt-5 font-heading text-2xl leading-snug text-foreground">Planning your first visit?</p>
+            <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Reach out and we will happily share this week's venue, timings and directions.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=1200+North+Main+Street,+Normal,+IL+61761" target="_blank" rel="noreferrer" class="premium-cta mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90">
+              <i data-lucide="navigation" class="h-4 w-4"></i> Get directions
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border bg-secondary/60">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+      <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div>
+          <p class="font-heading text-lg text-foreground">Hare Krishna Community Bloomington-Normal IL</p>
+          <p class="mt-1 text-sm text-muted-foreground">Bloomington Normal, Illinois</p>
+        </div>
+        <nav class="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-muted-foreground">
+          <a href="#activities" class="transition-colors hover:text-primary">Activities</a>
+          <a href="#festivals" class="transition-colors hover:text-primary">Festivals</a>
+          <a href="#saints" class="transition-colors hover:text-primary">Visiting Saints</a>
+          <a href="#contact" class="transition-colors hover:text-primary">Contact</a>
+        </nav>
+      </div>
+      <div class="mt-10 flex flex-col items-center gap-3 border-t border-border pt-6 text-center text-xs text-muted-foreground sm:flex-row sm:justify-between sm:text-left">
+        <p class="flex items-center gap-2">
+          <i data-lucide="flower-2" class="h-3.5 w-3.5 text-accent"></i>
+          Inspired by the teachings of Srila Prabhupada and ISKCON
+        </p>
+        <p>&copy; <span id="year"></span> Hare Krishna Community Bloomington-Normal IL</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sticky Nav background toggle on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 24) {
+        nav.classList.add('border-border', 'bg-background/85', 'backdrop-blur-xl');
+        nav.classList.remove('border-transparent', 'bg-transparent');
+      } else {
+        nav.classList.remove('border-border', 'bg-background/85', 'backdrop-blur-xl');
+        nav.classList.add('border-transparent', 'bg-transparent');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
